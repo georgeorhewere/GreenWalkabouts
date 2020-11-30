@@ -1,4 +1,4 @@
 # GreenWalkabouts
-Clean architecture template for an ecommerc.e market place app
+Clean architecture template for an ecommerce market place app
 
 
