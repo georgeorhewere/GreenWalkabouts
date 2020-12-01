@@ -16,8 +16,7 @@ namespace Walkabouts.Repository.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            //new ProductMap(modelBuilder.Entity<Product>());
-            //new ProductDetailMap(modelBuilder.Entity<ProductDetails>());
+         
         }
 
         public async Task<int> CommitAsync()
