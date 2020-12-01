@@ -35,24 +35,20 @@ namespace Walkabouts.API
             var dbConnStr = Configuration["ConnectionStrings:DefaultConnection"];
             services.AddDbContext<WalkaboutsDbContext>(options => options.UseSqlServer(dbConnStr));
 
-            services.AddIdentity<AppUser, AppRole>()
-                    .AddEntityFrameworkStores<WalkaboutsDbContext>()
-                    .AddDefaultTokenProviders();
-
-
-            services.AddControllers();
-            services.Configure<IdentityOptions>(options =>
-            {
-                // Password settings
+            services.AddIdentity<AppUser, AppRole>(options => {
+                options.SignIn.RequireConfirmedAccount = true;
                 options.Password.RequireDigit = true;
                 options.Password.RequiredLength = 8;
                 options.Password.RequireNonAlphanumeric = true;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireLowercase = false;
-                //options.Password.RequiredUniqueChars = 6;
-            });
+            })
+                    .AddEntityFrameworkStores<WalkaboutsDbContext>()
+                    .AddDefaultTokenProviders();
 
-            services.AddAuthentication();
+
+            services.AddControllers();
+            
 
 
         }
