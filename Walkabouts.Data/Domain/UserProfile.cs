@@ -5,8 +5,9 @@ using System.Text;
 namespace Walkabouts.Data.Domain
 {
     public class UserProfile : BaseEntity
-    {
-        public int UserId { get; set; }
+    {   
+        public long UserId { get; set; }
+        public AppUser AppUser { get; set; }
         public string Address { get; set; }
         public string State { get; set; }
         public string City { get; set; }
