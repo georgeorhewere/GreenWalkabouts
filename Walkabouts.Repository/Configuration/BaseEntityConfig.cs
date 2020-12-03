@@ -14,10 +14,8 @@ namespace Walkabouts.Repository.Configuration
             builder
                 .Property(m => m.Id)
                 .UseIdentityColumn();
-
-            builder
-                .ToTable(EntityName);
+            
         }
-        protected virtual string EntityName { get => $"{nameof(TEntity)}s"; }
+       // protected virtual string EntityName { get => $"{nameof(TEntity)}s"; }
     }
 }

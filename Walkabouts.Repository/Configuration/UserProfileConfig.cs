@@ -26,6 +26,8 @@ namespace Walkabouts.Repository.Configuration
                 .HasOne(m => m.AppUser) 
                 .WithOne(m =>m.UserProfile)
                 .HasForeignKey<AppUser>(m=>m.UserProfileId);
+
+            builder.ToTable("UserProfiles");
         }
 
     }
