@@ -25,10 +25,19 @@ namespace Walkabouts.Repository.Configuration
             builder
                 .HasOne(m => m.AppUser) 
                 .WithOne(m =>m.UserProfile)
-                .HasForeignKey<AppUser>(m=>m.UserProfileId);
-
-            builder.ToTable("UserProfiles");
+                .HasForeignKey<UserProfile>(m=>m.UserId);
+            
+            builder
+               .HasOne(m => m.ShoppingCart)
+               .WithOne(m => m.UserProfile)
+               .HasForeignKey<UserProfile>(m => m.ShoppingCartId);
+            builder
+               .HasOne(m => m.UserWallet)
+               .WithOne(m => m.UserProfile)
+               .HasForeignKey<UserProfile>(m => m.UserWalletId);
         }
+
+        protected override string EntityName { get => $"{nameof(UserProfile)}s"; }
 
     }
 }

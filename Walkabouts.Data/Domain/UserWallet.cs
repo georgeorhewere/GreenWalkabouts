@@ -1,7 +1,12 @@
-﻿namespace Walkabouts.Data.Domain
+﻿using System.Collections.Generic;
+
+namespace Walkabouts.Data.Domain
 {
     public class UserWallet : BaseEntity
     {
-        public int UserProfileId { get; set; }
+        public long UserProfileId { get; set; }
+        public UserProfile UserProfile { get; set; }
+        public ICollection<PaymentOption> PaymentOptions { get; set; }
+        public decimal Balance { get; set; }
     }
 }

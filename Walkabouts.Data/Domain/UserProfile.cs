@@ -14,5 +14,13 @@ namespace Walkabouts.Data.Domain
         public string Country { get; set; }
         public string PhoneNumber { get; set; }
 
+        public long ShoppingCartId { get; set; }
+        public ShoppingCart ShoppingCart { get; set; }
+
+        public long UserWalletId { get; set; }
+        public UserWallet UserWallet { get; set; }
+
+
+
     }
 }

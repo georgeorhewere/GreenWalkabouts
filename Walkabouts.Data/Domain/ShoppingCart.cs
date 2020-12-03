@@ -6,8 +6,9 @@ namespace Walkabouts.Data.Domain
 {
     public class ShoppingCart : BaseEntity
     {
-        public int UserProfileId { get; set; }
-        public List<OrderItem> ShoppingCartItems { get; set; }
+        public long UserProfileId { get; set; }
+        public UserProfile UserProfile { get; set; }
+        public ICollection<OrderItem> ShoppingCartItems { get; set; }
         public decimal CartTotal { get; set; }
         
 

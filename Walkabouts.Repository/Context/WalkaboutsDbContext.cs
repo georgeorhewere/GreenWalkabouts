@@ -28,6 +28,10 @@ namespace Walkabouts.Repository.Context
             base.OnModelCreating(modelBuilder);
             modelBuilder
                 .ApplyConfiguration(new UserProfileConfig());
+            modelBuilder
+                .ApplyConfiguration(new UserWalletConfig());
+            modelBuilder
+                .ApplyConfiguration(new ShoppingCartConfig());           
 
         }
 
