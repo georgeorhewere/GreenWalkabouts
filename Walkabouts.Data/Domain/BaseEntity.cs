@@ -12,7 +12,8 @@ namespace Walkabouts.Data.Domain
             RefId = Guid.NewGuid();
             CreatedOn = DateTime.Now;
         }
-        
+
+        public long Id { get; set; }
         public long CreatedBy { set; get; }
         public DateTime CreatedOn { set; get; }
         public long? ModifiedBy { set; get; }

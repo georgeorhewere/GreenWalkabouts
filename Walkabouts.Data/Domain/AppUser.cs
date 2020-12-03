@@ -14,5 +14,6 @@ namespace Walkabouts.Data.Domain
         public DateTime? ModifiedOn { set; get; }
         public bool IsDeleted { get; set; }
         public Guid RefId { get; set; }
+        public UserProfile UserProfile { get; set; }        
     }
 }
