@@ -14,6 +14,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Walkabouts.Data.Domain;
 using Walkabouts.Repository.Context;
+using Walkabouts.Services.Implementations;
+using Walkabouts.Services.Interfaces;
 
 namespace Walkabouts.API
 {
@@ -49,6 +51,7 @@ namespace Walkabouts.API
 
             services.AddControllers();
             services.AddSwaggerGen();
+            services.AddWalkaboutServices();
             
 
 
