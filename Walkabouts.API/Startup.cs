@@ -48,10 +48,11 @@ namespace Walkabouts.API
                     .AddEntityFrameworkStores<WalkaboutsDbContext>()
                     .AddDefaultTokenProviders();
 
+            services.AddWalkaboutServices();
 
             services.AddControllers();
             services.AddSwaggerGen();
-            services.AddWalkaboutServices();
+            
             
 
 
@@ -69,8 +70,8 @@ namespace Walkabouts.API
 
             app.UseRouting();
             InitializeDb(app);
-
-            app.UseAuthorization();
+            app.UseAuthentication();
+           // app.UseAuthorization();
             
             app.UseSwagger();
             
