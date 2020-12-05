@@ -8,4 +8,8 @@
     <Folder Include="DTO\Domain\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Walkabouts.Repository\Walkabouts.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
