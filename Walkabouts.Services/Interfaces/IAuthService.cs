@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Walkabouts.Services.DTO;
+using System.Threading.Tasks;
+using Walkabouts.Data.DTO;
 
 namespace Walkabouts.Services.Interfaces
 {
     public interface IAuthService
     {        
-        RegisterUserResultDTO RegisterUser(RegisterDTO model);
-        LoginUserResultDTO Login(LoginDTO model);
+        Task<ServiceResultDTO> RegisterUser(RegisterDTO model);
+        ServiceResultDTO Login(LoginDTO model);
     }
 }

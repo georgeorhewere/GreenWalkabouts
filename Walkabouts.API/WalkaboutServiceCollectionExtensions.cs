@@ -11,6 +11,7 @@ namespace Walkabouts.API
     {
         public static IServiceCollection AddWalkaboutServices(this IServiceCollection services)
         {
+            
             services.AddScoped<IAuthService, AuthService>();
             return services;
         }

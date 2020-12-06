@@ -1,4 +1,5 @@
-﻿using Walkabouts.Repository.Context;
+﻿using AutoMapper;
+using Walkabouts.Repository.Context;
 using Walkabouts.Services.Interfaces;
 
 namespace Walkabouts.Services.Implementations
@@ -6,9 +7,11 @@ namespace Walkabouts.Services.Implementations
     public class BaseService : IBaseService
     {
         protected readonly WalkaboutsDbContext context;
-        public BaseService(WalkaboutsDbContext _context)
+        protected readonly IMapper mapper;
+        public BaseService(WalkaboutsDbContext _context, IMapper _mapper)
         {
-            _context = context;
+           context = _context;
+            mapper = _mapper;
         }
 
 
@@ -19,8 +22,9 @@ namespace Walkabouts.Services.Implementations
 
         public void Save<T>(T model) where T : class
         {
-           
-            throw new System.NotImplementedException();
+
+            context.SaveChangesAsync();
+         
         }
 
         public void Delete<T>(T model) where T : class

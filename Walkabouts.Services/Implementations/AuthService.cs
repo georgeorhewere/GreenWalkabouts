@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Walkabouts.Data.Domain;
 using Walkabouts.Repository.Context;
-using Walkabouts.Services.DTO;
+using Walkabouts.Data.DTO;
 using Walkabouts.Services.Interfaces;
+using AutoMapper;
 
 namespace Walkabouts.Services.Implementations
 {
@@ -13,20 +15,21 @@ namespace Walkabouts.Services.Implementations
     {
         private UserManager<AppUser> userManager;
 
-        public AuthService(WalkaboutsDbContext dbContext,UserManager<AppUser> _userManager) :base(dbContext)
+        public AuthService(WalkaboutsDbContext dbContext,UserManager<AppUser> _userManager, IMapper mapper) :base(dbContext, mapper)
         {
             userManager = _userManager;
         }
-        public LoginUserResultDTO Login(LoginDTO model)
+        public ServiceResultDTO Login(LoginDTO model)
         {            
             throw new NotImplementedException();
         }
 
-        public RegisterUserResultDTO RegisterUser(RegisterDTO model)
+        public Task<ServiceResultDTO> RegisterUser(RegisterDTO model)
         {
-             
+
             //userManager.CreateAsync()
-            throw new NotImplementedException();
+            var userMapped = mapper.Map<AppUser>(model);
+            return Task.FromResult(new ServiceResultDTO() { Success=true, Data = userMapped });
         }
     }
 }
