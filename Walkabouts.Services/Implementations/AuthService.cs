@@ -15,7 +15,9 @@ namespace Walkabouts.Services.Implementations
     {
         private UserManager<AppUser> userManager;
 
-        public AuthService(WalkaboutsDbContext dbContext,UserManager<AppUser> _userManager, IMapper mapper) :base(dbContext, mapper)
+        public AuthService(WalkaboutsDbContext dbContext, 
+                           UserManager<AppUser> _userManager, 
+                           IMapper mapper) :base(dbContext, mapper)
         {
             userManager = _userManager;
         }
@@ -24,12 +26,23 @@ namespace Walkabouts.Services.Implementations
             throw new NotImplementedException();
         }
 
-        public Task<ServiceResultDTO> RegisterUser(RegisterDTO model)
+        public async Task<ServiceResultDTO> RegisterUser(RegisterDTO model)
         {
+            var serviceResult = new ServiceResultDTO();
+            
+            try
+            {             
+                var addUser = mapper.Map<AppUser>(model);
+                await userManager.CreateAsync(addUser, model.Password);
+                serviceResult.Success = true;
+                serviceResult.Data = addUser;
+            }
+            catch (Exception ex)
+            {
+                serviceResult.Error = ex.Message;
+            }
 
-            //userManager.CreateAsync()
-            var userMapped = mapper.Map<AppUser>(model);
-            return Task.FromResult(new ServiceResultDTO() { Success=true, Data = userMapped });
+            return  serviceResult;
         }
     }
 }

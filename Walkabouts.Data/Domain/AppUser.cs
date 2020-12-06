@@ -7,6 +7,12 @@ namespace Walkabouts.Data.Domain
 {
     public class AppUser : IdentityUser<long>, IRefEntity
     {
+        public AppUser()
+        {
+            RefId = Guid.NewGuid();
+            CreatedOn = DateTime.Now;
+        }
+
         public string FirstName { get; set; }
         public string LastName { get; set; }        
         public DateTime CreatedOn { set; get; }
