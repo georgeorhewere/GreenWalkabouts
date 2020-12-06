@@ -34,7 +34,7 @@ namespace Walkabouts.API
             //services.Configure<AppSettings>(Configuration);
             //var appSettings = Configuration.Get<AppSettings>();
 
-            var dbConnStr = Configuration["ConnectionStrings:DefaultConnection"];
+            var dbConnStr = Configuration["WalkaboutDb"];
             services.AddDbContext<WalkaboutsDbContext>(options => options.UseSqlServer(dbConnStr));
 
             services.AddIdentity<AppUser, AppRole>(options => {
