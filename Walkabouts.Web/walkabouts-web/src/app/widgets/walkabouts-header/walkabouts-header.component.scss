@@ -1,13 +1,14 @@
 #site_header{
     width: 100%;
     padding: 50px 0 10px;
+    display: flex;
 
     #header_left{
-        float: left;
+        vertical-align: bottom;
     }
     #header_right{
-        float: right;
-        margin-top: 5px;
+        vertical-align: bottom;
+        
     }
     clear: both;
 }
