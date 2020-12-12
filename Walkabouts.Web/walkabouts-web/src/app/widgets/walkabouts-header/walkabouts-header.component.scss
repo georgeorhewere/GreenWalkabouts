@@ -1,0 +1,13 @@
+#site_header{
+    width: 100%;
+    padding: 50px 0 10px;
+
+    #header_left{
+        float: left;
+    }
+    #header_right{
+        float: right;
+        margin-top: 5px;
+    }
+    clear: both;
+}
