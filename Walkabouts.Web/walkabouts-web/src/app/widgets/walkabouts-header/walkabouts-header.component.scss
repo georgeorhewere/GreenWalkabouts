@@ -1,12 +1,20 @@
 #site_header{
-    width: 100%;    
-    display: flex;
+    display: flex;    
+    align-items: center;
+    justify-content: space-between;
+    .container{
+        width: 100%;
+        display: flex;
+    }
 
     #header_left{
         vertical-align: bottom;
     }
-    #header_right{
-        vertical-align: bottom;        
-    }
+    .user_actions {
+        overflow: hidden;         
+        margin-left: auto;
+        
+      }
+
     clear: both;
 }
