@@ -9,10 +9,14 @@
 
     #header_left{
         vertical-align: bottom;
+        h1{
+            margin: 0;
+        }
     }
-    .user_actions {
+    #user_actions {
         overflow: hidden;         
         margin-left: auto;
+        padding-top: 20px;
         
       }
 
