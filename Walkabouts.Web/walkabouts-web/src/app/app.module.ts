@@ -8,13 +8,11 @@ import { WalkaboutsHeaderComponent } from './widgets/walkabouts-header/walkabout
 import { WalkaboutsMenuComponent } from './widgets/walkabouts-menu/walkabouts-menu.component';
 import { WalkaboutsFooterComponent } from './widgets/walkabouts-footer/walkabouts-footer.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent,
-    WalkaboutsHeaderComponent,
-    WalkaboutsMenuComponent,
-    WalkaboutsFooterComponent
+    NotFoundComponent,    
   ],
   imports: [
     BrowserModule,
