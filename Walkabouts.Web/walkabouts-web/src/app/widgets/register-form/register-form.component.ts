@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { IRegisterDTO } from 'src/app/shared/data/iregisterdto';
 import { MustMatch } from 'src/app/shared/validators/must-match';
 
 @Component({
@@ -10,6 +12,9 @@ import { MustMatch } from 'src/app/shared/validators/must-match';
 export class RegisterFormComponent implements OnInit {
 
   userForm: FormGroup;
+  submitted = false;
+  @Output()
+  Save : EventEmitter<IRegisterDTO> = new EventEmitter<IRegisterDTO>();
   constructor(private formBuilder: FormBuilder) 
   {
 
@@ -31,7 +36,7 @@ export class RegisterFormComponent implements OnInit {
                   
                   ]
                 ],
-      password: ['', [  Validators.required, Validators.min(6)]],
+      password: ['', [Validators.required, Validators.min(6)]],
       confirmPassword: ['', [Validators.required,Validators.min(6)]],
       }, {
         validator: MustMatch('password', 'confirmPassword')
@@ -43,6 +48,8 @@ export class RegisterFormComponent implements OnInit {
   saveUser(){
     if(this.userForm.valid){
          console.log('submitted form', this.userForm.value);
+         var model = <IRegisterDTO>this.userForm.value;
+         this.Save.emit(model);
     }else{
       console.log('error state', this.userForm)
     }

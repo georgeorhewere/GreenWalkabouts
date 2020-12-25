@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IRegisterDTO } from 'src/app/shared/data/iregisterdto';
+import { AuthorizationService } from 'src/app/shared/services/authorization.service';
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthorizationService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void 
+  {
+  }
+
+
+  SaveUser(userForm: IRegisterDTO){
+    this.authService.registerUser(userForm).subscribe((x) =>{
+      console.log('Form Saved', x)
+    });
+    
   }
 
 }
