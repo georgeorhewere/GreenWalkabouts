@@ -13,9 +13,7 @@ const routes: Routes = [
 
     ]
   
-  },
-
-  ,
+  }
   /* { path: 'verify-user', component: SignupComponent }, */
   /* { path: 'login', component: SignupComponent }, */  
   /* { path: 'forgot-password', component: SignupComponent }, */
