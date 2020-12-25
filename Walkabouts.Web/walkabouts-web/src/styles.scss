@@ -12,10 +12,18 @@ body{
     src: url(assets/fonts/Lato/Lato-Regular.ttf) format("truetype");
 }
 @font-face {
+    font-family: 'lato-bold';
+    src: url(assets/fonts/Lato/Lato-Bold.ttf) format("truetype");
+}
+@font-face {
     font-family: 'opensans-light';
     src: url(assets/fonts/Open_Sans/OpenSans-Light.ttf) format("truetype");
 }
 @font-face {
     font-family: 'opensans-bold';
     src: url(assets/fonts/Open_Sans/OpenSans-Bold.ttf) format("truetype");
+}
+@font-face {
+    font-family: 'nunito-regular';
+    src: url(assets/fonts/Nunito/Nunito-Regular.ttf) format("truetype");
 }

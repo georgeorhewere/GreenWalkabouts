@@ -4,6 +4,8 @@ import { WalkaboutsHeaderComponent } from './walkabouts-header/walkabouts-header
 import { WalkaboutsFooterComponent } from './walkabouts-footer/walkabouts-footer.component';
 import { WalkaboutsMenuComponent } from './walkabouts-menu/walkabouts-menu.component';
 import { RouterModule } from '@angular/router';
+import { RegisterFormComponent } from './register-form/register-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,16 +13,20 @@ import { RouterModule } from '@angular/router';
   declarations: [
     WalkaboutsHeaderComponent,
     WalkaboutsMenuComponent,
-    WalkaboutsFooterComponent,    
+    WalkaboutsFooterComponent,
+    RegisterFormComponent,    
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     WalkaboutsHeaderComponent,
     WalkaboutsMenuComponent,
     WalkaboutsFooterComponent, 
+    RegisterFormComponent, 
   ]
 })
 export class WidgetsModule { }

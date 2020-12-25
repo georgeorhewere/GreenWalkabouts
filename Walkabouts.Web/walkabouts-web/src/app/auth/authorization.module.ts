@@ -4,6 +4,8 @@ import { AuthorizationRoutingModule } from './authorization-routing.module';
 import { SignupComponent } from './signup/signup.component';
 import { RouterModule } from '@angular/router';
 import { AuthorizationHomeComponent } from './authorization-home/authorization-home.component';
+import { WidgetsModule } from '../widgets/widgets.module';
+/* import { FormsModule, ReactiveFormsModule } from '@angular/forms'; */
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { AuthorizationHomeComponent } from './authorization-home/authorization-h
   imports: [
     CommonModule,
     AuthorizationRoutingModule,
-    RouterModule
+    RouterModule,
+    WidgetsModule,
+    
   ]
 })
 export class AuthorizationModule { }
