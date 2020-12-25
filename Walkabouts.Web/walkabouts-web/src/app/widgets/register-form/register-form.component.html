@@ -1,12 +1,36 @@
-<form action="#" method="post">
+<form [formGroup]="userForm" (submit)="saveUser()">
     <div class="form-group">
-        <input class="text" type="text" name="firstName" placeholder="First Name" required="">
+        <input class="text" type="text" formControlName="firstName" name="firstName" placeholder="First Name" required="">
+        <p class="validation-error" 
+        *ngIf="!userForm.controls.firstName.valid 
+        && (userForm.controls.firstName.touched)" 
+        >
+        *  Required
+        </p>
     </div>
     <div class="form-group">
-        <input class="text" type="text" name="lastName" placeholder="Last Name" required="">
+        <input class="text" type="text" formControlName="lastName" name="lastName" placeholder="Last Name" required="">
+        <p class="validation-error" 
+        *ngIf="!userForm.controls.lastName.valid 
+        && (form.lastName.touched)" 
+        >
+        *  Required
+        </p>
     </div>
     <div class="form-group">
-    <input class="text email" type="email" name="email" placeholder="Email" required="">
+    <input class="text email" type="email" formControlName="email" name="lastName" placeholder="Email" required="">
+    <p class="validation-error" 
+        *ngIf="form.email.errors.required 
+        && (form.email.touched)" 
+        >
+        * Email Required
+        </p>
+        <p class="validation-error" 
+        *ngIf="form.email.errors.required 
+        && (form.email.errors.email)" 
+        >
+        * Email must be a valid email in the format (user@mail.com)
+        </p>
     </div>
 
   <!--   <div class="form-group">
@@ -14,15 +38,35 @@
     </div> -->
 
     <div class="form-group">
-    <input class="text" type="password" name="password" placeholder="Password" required="">
+    <input class="text" type="password" formControlName="password" placeholder="Password" required="">
+    <p class="validation-error" 
+        *ngIf="!userForm.controls.password.valid 
+        && (userForm.controls.password.touched)" 
+        >
+        *  Required
+        </p>
     </div>
     <div class="form-group">
-    <input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="">
+    <input class="text w3lpass" type="password" formControlName="confirmPassword" placeholder="Confirm Password" required="">
+    <p class="validation-error" 
+        *ngIf="!userForm.controls.confirmPassword.valid 
+        && (userForm.controls.confirmPassword.touched)" 
+        >
+        *  Required
+        </p>
+        <p class="validation-error" 
+        *ngIf="!userForm.controls.confirmPassword.valid 
+        && (userForm.controls.confirmPassword.touched || form.confirmPassword.errors.mustMatch)" 
+        >
+        * Passwords must match
+        </p>
+        
     </div>
     <div class="wthree-text">
         <label class="anim">
             <input type="checkbox" class="checkbox" required="">
             <span>I Agree To The Terms & Conditions</span>
+            
         </label>
         <div class="clear"> </div>
     </div>

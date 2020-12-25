@@ -24,6 +24,32 @@
     font-family: $primary-regular, sans-serif;
   }
   
+  .validation-error{
+    color:red;
+    font-family: $primary-regular;
+    font-size: 0.9em;
+    margin: 0;
+    }
+    
+    .agileits-top p {
+      font-size: 1em;
+      color: #fff;
+      text-align: center;
+      letter-spacing: 1px;
+      font-weight: 300;
+    }
+    
+    .agileits-top p a {
+      color: #fff;
+      -webkit-transition: .5s all;
+      -moz-transition: .5s all;
+      transition: .5s all;
+      font-weight: 400;
+    }
+    
+    .agileits-top p a:hover {
+      color: #76b852;
+    }
 
  /*  input.email, input.text.w3lpass {
     margin: 2em 0;
