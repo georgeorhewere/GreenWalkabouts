@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IRegisterDTO } from '../data/iregisterdto';
+import { IServiceResponseDTO } from '../data/iserviceresponsedto';
 import { HttpService } from './http.service';
 
 @Injectable({
@@ -21,7 +22,7 @@ export class AuthorizationService {
   registerUser(model: IRegisterDTO):Observable<any>{
       var url = environment.authorization.register
       console.log('Api Post',model);
-      return this.httpClient.post<any>(url, model,
+      return this.httpClient.post<IServiceResponseDTO>(url, model,
         {
           headers: new HttpHeaders()
             .set('Content-Type', 'application/json')

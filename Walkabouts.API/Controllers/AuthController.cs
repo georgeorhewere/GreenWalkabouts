@@ -23,7 +23,7 @@ namespace Walkabouts.API.Controllers
         }
         
         [HttpPost("register")]
-        public async Task<object> Register(RegisterDTO model, string returnUrl = null)
+        public async Task<ServiceResultDTO> Register(RegisterDTO model, string returnUrl = null)
         {
 
             if (ModelState.IsValid)
