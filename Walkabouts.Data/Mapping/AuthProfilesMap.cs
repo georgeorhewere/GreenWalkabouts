@@ -18,6 +18,10 @@ namespace Walkabouts.Data.Mapping
                                              .ForPath(dto => dto.UserProfile.Address, map => map.MapFrom(source => source.Address))
                                              .ForPath(dto => dto.UserProfile.PhoneNumber, map => map.MapFrom(source => source.PhoneNumber))
                                              ;
+            CreateMap<AppUser, RegisterDTO>().ForMember(dto => dto.Email, map => map.MapFrom(source => source.Email))
+                                            .ForMember(dto => dto.FirstName, map => map.MapFrom(source => source.FirstName))
+                                            .ForMember(dto => dto.LastName, map => map.MapFrom(source => source.LastName))                                            
+                                            .ForPath(dto => dto.Id, map => map.MapFrom(source => source.Id));
         }
     }
 }

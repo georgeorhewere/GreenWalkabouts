@@ -37,18 +37,18 @@ namespace Walkabouts.Services.Implementations
                 if (res.Succeeded)
                 {
                     serviceResult.Success = res.Succeeded;
+                    serviceResult.Data = mapper.Map<RegisterDTO>(model);
                 }
                 else
                 {
                     serviceResult.Error = res.Errors;
                 }
-                serviceResult.Data = addUser;
+                
             }
             catch (Exception ex)
             {
                 serviceResult.Error = ex.Message;
             }
-
             return  serviceResult;
         }
     }
