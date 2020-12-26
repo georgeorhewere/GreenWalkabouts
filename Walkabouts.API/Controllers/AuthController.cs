@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Walkabouts.Data.DTO;
@@ -20,7 +21,7 @@ namespace Walkabouts.API.Controllers
         {
             authService = _authService;
         }
-
+        
         [HttpPost("register")]
         public async Task<object> Register(RegisterDTO model, string returnUrl = null)
         {

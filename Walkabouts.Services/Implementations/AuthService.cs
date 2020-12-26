@@ -33,8 +33,15 @@ namespace Walkabouts.Services.Implementations
             try
             {             
                 var addUser = mapper.Map<AppUser>(model);
-                await userManager.CreateAsync(addUser, model.Password);
-                serviceResult.Success = true;
+                var res = await userManager.CreateAsync(addUser, model.Password);
+                if (res.Succeeded)
+                {
+                    serviceResult.Success = res.Succeeded;
+                }
+                else
+                {
+                    serviceResult.Error = res.Errors;
+                }
                 serviceResult.Data = addUser;
             }
             catch (Exception ex)

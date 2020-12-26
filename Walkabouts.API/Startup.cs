@@ -22,6 +22,8 @@ namespace Walkabouts.API
 {
     public class Startup
     {
+        readonly string DevOrigins = "DevOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -34,6 +36,7 @@ namespace Walkabouts.API
         {
             //services.Configure<AppSettings>(Configuration);
             //var appSettings = Configuration.Get<AppSettings>();
+            
 
             var dbConnStr = Configuration["WalkaboutDb"];
             services.AddDbContext<WalkaboutsDbContext>(options => options.UseSqlServer(dbConnStr));
@@ -41,8 +44,8 @@ namespace Walkabouts.API
             services.AddIdentity<AppUser, AppRole>(options => {
                 options.SignIn.RequireConfirmedAccount = true;
                 options.Password.RequireDigit = true;
-                options.Password.RequiredLength = 8;
-                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequiredLength = 6;
+                options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireLowercase = false;
             })
@@ -50,8 +53,24 @@ namespace Walkabouts.API
                     .AddDefaultTokenProviders();
 
             services.AddWalkaboutServices();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: DevOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://localhost:73")
+                                      .AllowAnyHeader()
+                                      .AllowAnyMethod()
+                                      .AllowCredentials();
+                                      
+                                  }
+                                  );
+            });
 
-            services.AddControllers();
+            services.AddControllers()
+             .AddNewtonsoftJson(options =>
+                            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                );
             services.AddSwaggerGen();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
@@ -75,7 +94,8 @@ namespace Walkabouts.API
             app.UseRouting();
             InitializeDb(app);
             app.UseAuthentication();
-           // app.UseAuthorization();
+            // app.UseAuthorization();
+            app.UseCors(DevOrigins);
             
             app.UseSwagger();
             

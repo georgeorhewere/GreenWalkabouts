@@ -5,6 +5,7 @@ import { SignupComponent } from './signup/signup.component';
 import { RouterModule } from '@angular/router';
 import { AuthorizationHomeComponent } from './authorization-home/authorization-home.component';
 import { WidgetsModule } from '../widgets/widgets.module';
+// mport { HttpClient, HttpClientModule } from '@angular/common/http';
 /* import { FormsModule, ReactiveFormsModule } from '@angular/forms'; */
 
 
@@ -17,8 +18,9 @@ import { WidgetsModule } from '../widgets/widgets.module';
     CommonModule,
     AuthorizationRoutingModule,
     RouterModule,
-    WidgetsModule,
-    
-  ]
+    WidgetsModule, 
+   // HttpClientModule,   
+  ],
+  
 })
 export class AuthorizationModule { }

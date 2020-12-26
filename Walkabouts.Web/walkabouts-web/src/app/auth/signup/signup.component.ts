@@ -17,7 +17,7 @@ export class SignupComponent implements OnInit {
 
 
   SaveUser(userForm: IRegisterDTO){
-    this.authService.registerUser(userForm).subscribe((x) =>{
+     this.authService.registerUser(userForm).subscribe((x) =>{
       console.log('Form Saved', x)
     });
     

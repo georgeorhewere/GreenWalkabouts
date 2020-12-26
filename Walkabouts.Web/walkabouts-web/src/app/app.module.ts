@@ -4,9 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { WalkaboutsHeaderComponent } from './widgets/walkabouts-header/walkabouts-header.component';
-import { WalkaboutsMenuComponent } from './widgets/walkabouts-menu/walkabouts-menu.component';
-import { WalkaboutsFooterComponent } from './widgets/walkabouts-footer/walkabouts-footer.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -16,9 +14,11 @@ import { WalkaboutsFooterComponent } from './widgets/walkabouts-footer/walkabout
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+   
   ],
-  providers: [],
+ // providers: [ HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
