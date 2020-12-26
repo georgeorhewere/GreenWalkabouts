@@ -16,11 +16,6 @@ namespace Walkabouts.Repository.Configuration
             builder
                 .Property(b => b.UserId)
                 .IsRequired();
-            
-            builder
-                .Property(b => b.PhoneNumber)
-                .IsRequired();            
-
 
             builder
                 .HasOne(m => m.AppUser) 

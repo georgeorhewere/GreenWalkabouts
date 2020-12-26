@@ -1,4 +1,4 @@
-﻿namespace Walkabouts.Services.DTO
+﻿namespace Walkabouts.Data.DTO
 {
     public class LoginDTO
     {

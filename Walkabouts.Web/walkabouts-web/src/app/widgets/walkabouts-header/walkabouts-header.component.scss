@@ -1,0 +1,24 @@
+#site_header{
+    display: flex;    
+    align-items: center;
+    justify-content: space-between;
+    .container{
+        width: 100%;
+        display: flex;
+    }
+
+    #header_left{
+        vertical-align: bottom;
+        h1{
+            margin: 0;
+        }
+    }
+    #user_actions {
+        overflow: hidden;         
+        margin-left: auto;
+        padding-top: 20px;
+        
+      }
+
+    clear: both;
+}

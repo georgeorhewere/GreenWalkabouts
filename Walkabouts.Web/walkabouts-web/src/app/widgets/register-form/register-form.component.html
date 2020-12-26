@@ -1,0 +1,83 @@
+<form [formGroup]="userForm" (submit)="saveUser()">
+    <div class="form-group">
+        <input class="text" type="text" formControlName="firstName" name="firstName" placeholder="First Name" required="">
+        <p class="validation-error" 
+        *ngIf="form?.firstName?.errors?.required 
+        && (form?.firstName?.touched)" 
+        >
+        *  First Name is required
+        </p>
+    </div>
+    <div class="form-group">
+        <input class="text" type="text" formControlName="lastName" name="lastName" placeholder="Last Name" required="">
+        <p class="validation-error" 
+        *ngIf="form?.lastName?.errors?.required 
+        && (form?.lastName?.touched)" 
+        >
+        *  Last Name is required
+        </p>
+    </div>
+    <div class="form-group">
+    <input class="text email" type="email" formControlName="email" name="lastName" placeholder="Email" required="">
+    <p class="validation-error" 
+        *ngIf="form?.email?.errors?.required 
+        && (form?.email?.touched)" 
+        >
+        * Email is required
+        </p>
+        <p class="validation-error" 
+        *ngIf="form.email?.errors?.required 
+        && (form.email?.errors?.email)" 
+        >
+        * Email must be a valid email in the format (user@mail.com)
+        </p>
+    </div>
+
+  <!--   <div class="form-group">
+        <input class="text" type="tel" name="phoneNumber" placeholder="Phone Number" required="">
+    </div> -->
+
+    <div class="form-group">
+    <input class="text" type="password" formControlName="password" placeholder="Password" required="">
+    <p class="validation-error" 
+        *ngIf="form?.password?.errors?.required 
+        && (form?.password?.touched)" 
+        >
+        *  Password is required
+        </p>
+        <p class="validation-error" 
+        *ngIf="form?.password?.errors?.min 
+        && (form?.password?.touched)">
+        *  Password must be minimum 6 characters
+        </p>
+    </div>
+    <div class="form-group">
+    <input class="text w3lpass" type="password" formControlName="confirmPassword" placeholder="Confirm Password" required="">
+    <p class="validation-error" 
+        *ngIf="form?.confirmPassword?.errors?.required 
+        && (form?.confirmPassword?.touched)">
+        *  Password confirmation is required
+        </p>
+        <p class="validation-error" 
+        *ngIf="form?.confirmPassword?.errors?.min 
+        && (form?.confirmPassword?.touched)">
+        *  Password must be minimum 6 characters
+        </p>
+        <p class="validation-error" 
+        *ngIf="!userForm.controls.confirmPassword.valid 
+        && (userForm.controls.confirmPassword.touched || form.confirmPassword.errors.mustMatch)" 
+        >
+        * Passwords must match
+        </p>
+        
+    </div>
+    <div class="wthree-text">
+        <label class="anim">
+            <input type="checkbox" class="checkbox" required="">
+            <span>I Agree To The Terms & Conditions</span>
+            
+        </label>
+        <div class="clear"> </div>
+    </div>
+    <input type="submit" value="SIGNUP">
+</form>

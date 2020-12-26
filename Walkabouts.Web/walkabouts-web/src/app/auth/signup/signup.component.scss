@@ -1,0 +1,54 @@
+@import './../../../scss/variables.scss';
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    color: #fff;
+    font-weight: 100;
+    text-transform: capitalize;
+    letter-spacing: 4px;
+    font-family: $primary-bold;
+  }
+.main-agileinfo {
+    width: 35%;
+    margin: 3em auto;
+    background: rgba(0, 0, 0, 0.18);
+    background-size: cover;
+  }
+  .logo-top{
+      text-align: center;
+  }
+  .agileits-top {
+    padding: 1em;    
+  }
+ 
+  .agileits-top p {
+    font-size: 1em;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 300;
+  }
+  
+  .agileits-top p a {
+    color: #fff;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    transition: .5s all;
+    font-weight: 400;
+  }
+  
+  .agileits-top p a:hover {
+    color: #76b852;
+  }
+  @keyframes rippling {
+    50% {
+      border-left-color: #fff;
+    }
+  
+    100% {
+      border-bottom-color: #fff;
+      border-left-color: #fff;
+    }
+  }
+ 
