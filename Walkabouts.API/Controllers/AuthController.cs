@@ -33,7 +33,12 @@ namespace Walkabouts.API.Controllers
             }
 
 
-            return "Bad Model --- AuthController";
+            return new ServiceResultDTO { 
+                Message = $"Bad Model --- AuthController",
+                Data = ModelState.Select(x => new { x.Key, x.Value.RawValue, x.Value.Errors.Count})
+                           .Where(y => y.Count > 0)
+                           .ToList()
+        };
         }
 
 

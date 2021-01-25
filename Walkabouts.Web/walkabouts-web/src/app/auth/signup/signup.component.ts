@@ -22,6 +22,7 @@ export class SignupComponent implements OnInit {
      
       if(x.success){
         console.log('Form Saved', x.data)
+        var user = x.data.firstName
         //notification service 
         //redirect to home or return url.
 

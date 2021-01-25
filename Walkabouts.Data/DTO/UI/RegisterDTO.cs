@@ -1,8 +1,11 @@
-﻿namespace Walkabouts.Data.DTO
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Walkabouts.Data.DTO
 {
     public class RegisterDTO
     {
         public long Id { get; set; }
+        [Required]
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
