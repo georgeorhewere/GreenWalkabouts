@@ -11,7 +11,7 @@ using AutoMapper;
 
 namespace Walkabouts.Services.Implementations
 {
-    public class AuthService : BaseService, IAuthService
+    public class AuthService : BaseService,IAuthService
     {
         private UserManager<AppUser> userManager;
 
@@ -51,5 +51,7 @@ namespace Walkabouts.Services.Implementations
             }
             return  serviceResult;
         }
+
+
     }
 }

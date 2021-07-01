@@ -40,7 +40,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "walkabouts-web", "Walkabout
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{97B37C68-EA11-44F9-B41A-DED7D54846DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Walkabouts.API.Tests", "Walkabouts.API.Tests\Walkabouts.API.Tests.csproj", "{24562281-F59A-475C-950A-E11FA61187EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Walkabouts.API.Tests", "Walkabouts.API.Tests\Walkabouts.API.Tests.csproj", "{24562281-F59A-475C-950A-E11FA61187EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Walkabouts.WebASP", "Walkabouts.WebASP\Walkabouts.WebASP.csproj", "{FEBA9ECB-4C4D-4105-8522-DCDC8A7656DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,6 +74,10 @@ Global
 		{24562281-F59A-475C-950A-E11FA61187EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24562281-F59A-475C-950A-E11FA61187EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24562281-F59A-475C-950A-E11FA61187EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEBA9ECB-4C4D-4105-8522-DCDC8A7656DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEBA9ECB-4C4D-4105-8522-DCDC8A7656DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEBA9ECB-4C4D-4105-8522-DCDC8A7656DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEBA9ECB-4C4D-4105-8522-DCDC8A7656DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{A6B27A75-F14F-4AB2-96DC-BFE5CFF2D157} = {A03F1EDA-FB54-4166-A120-BEB1677AD25D}
 		{C18B1599-0A15-4585-B6B6-BABC7EBDC4C7} = {16ED02CC-8A75-4016-AB64-24C200BA4CA6}
 		{24562281-F59A-475C-950A-E11FA61187EA} = {97B37C68-EA11-44F9-B41A-DED7D54846DB}
+		{FEBA9ECB-4C4D-4105-8522-DCDC8A7656DB} = {16ED02CC-8A75-4016-AB64-24C200BA4CA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B935451A-CB8B-4B70-966B-1BEF04E4C808}

@@ -1,10 +1,13 @@
 ﻿using AutoMapper;
+using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using Walkabouts.Repository.Context;
 using Walkabouts.Services.Interfaces;
 
 namespace Walkabouts.Services.Implementations
 {
-    public class BaseService : IBaseService
+    public class BaseService
     {
         protected readonly WalkaboutsDbContext context;
         protected readonly IMapper mapper;
@@ -12,24 +15,10 @@ namespace Walkabouts.Services.Implementations
         {
            context = _context;
             mapper = _mapper;
-        }
+        }        
+        
+        
+        
 
-
-        public T Get<T>(long id) where T : class
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Save<T>(T model) where T : class
-        {
-
-            context.SaveChangesAsync();
-         
-        }
-
-        public void Delete<T>(T model) where T : class
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

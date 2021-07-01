@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Walkabouts.Repository.Context;
 
 namespace Walkabouts.Repository.Migrations
 {
     [DbContext(typeof(WalkaboutsDbContext))]
-    partial class WalkaboutsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210630153914_productConfig")]
+    partial class productConfig
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -423,12 +425,12 @@ namespace Walkabouts.Repository.Migrations
                         {
                             Id = 1L,
                             CreatedBy = 0L,
-                            CreatedOn = new DateTime(2021, 7, 1, 20, 14, 7, 416, DateTimeKind.Local).AddTicks(8490),
+                            CreatedOn = new DateTime(2021, 6, 30, 16, 39, 13, 131, DateTimeKind.Local).AddTicks(6109),
                             Description = "",
                             Featured = false,
-                            ModifiedOn = new DateTime(2021, 7, 1, 20, 14, 7, 416, DateTimeKind.Local).AddTicks(8526),
+                            ModifiedOn = new DateTime(2021, 6, 30, 16, 39, 13, 131, DateTimeKind.Local).AddTicks(6151),
                             ProductName = "Samsung 50 inch",
-                            RefId = new Guid("baa4e4ff-ae21-459b-bc83-1e19583ee13e"),
+                            RefId = new Guid("5c1b96b7-263a-45eb-b15b-67f3eab99cee"),
                             StockLevel = 15,
                             UnitPrice = 3400m
                         },
@@ -436,12 +438,12 @@ namespace Walkabouts.Repository.Migrations
                         {
                             Id = 2L,
                             CreatedBy = 0L,
-                            CreatedOn = new DateTime(2021, 7, 1, 20, 14, 7, 416, DateTimeKind.Local).AddTicks(9973),
+                            CreatedOn = new DateTime(2021, 6, 30, 16, 39, 13, 131, DateTimeKind.Local).AddTicks(8308),
                             Description = "energy saving product",
                             Featured = false,
-                            ModifiedOn = new DateTime(2021, 7, 1, 20, 14, 7, 416, DateTimeKind.Local).AddTicks(9975),
+                            ModifiedOn = new DateTime(2021, 6, 30, 16, 39, 13, 131, DateTimeKind.Local).AddTicks(8310),
                             ProductName = "SkyRun Fridge",
-                            RefId = new Guid("57a1b119-80d9-45ad-a50a-32609f8ddd11"),
+                            RefId = new Guid("547088db-f288-44b8-9156-353331943143"),
                             StockLevel = 11,
                             UnitPrice = 4000m
                         },
@@ -449,12 +451,12 @@ namespace Walkabouts.Repository.Migrations
                         {
                             Id = 3L,
                             CreatedBy = 0L,
-                            CreatedOn = new DateTime(2021, 7, 1, 20, 14, 7, 416, DateTimeKind.Local).AddTicks(9985),
+                            CreatedOn = new DateTime(2021, 6, 30, 16, 39, 13, 131, DateTimeKind.Local).AddTicks(8320),
                             Description = "",
                             Featured = false,
-                            ModifiedOn = new DateTime(2021, 7, 1, 20, 14, 7, 416, DateTimeKind.Local).AddTicks(9987),
+                            ModifiedOn = new DateTime(2021, 6, 30, 16, 39, 13, 131, DateTimeKind.Local).AddTicks(8322),
                             ProductName = "IPhone 6s",
-                            RefId = new Guid("3579f856-3d62-449b-877b-792f4945b1f9"),
+                            RefId = new Guid("72c82848-8c93-4705-8dcb-0f66d8a8e4a9"),
                             StockLevel = 5,
                             UnitPrice = 400m
                         },
@@ -462,59 +464,15 @@ namespace Walkabouts.Repository.Migrations
                         {
                             Id = 4L,
                             CreatedBy = 0L,
-                            CreatedOn = new DateTime(2021, 7, 1, 20, 14, 7, 416, DateTimeKind.Local).AddTicks(9993),
+                            CreatedOn = new DateTime(2021, 6, 30, 16, 39, 13, 131, DateTimeKind.Local).AddTicks(8330),
                             Description = "",
                             Featured = false,
-                            ModifiedOn = new DateTime(2021, 7, 1, 20, 14, 7, 416, DateTimeKind.Local).AddTicks(9995),
+                            ModifiedOn = new DateTime(2021, 6, 30, 16, 39, 13, 131, DateTimeKind.Local).AddTicks(8332),
                             ProductName = "OX Fan 10 inch",
-                            RefId = new Guid("21970f24-9af8-44c8-a9ee-9084c327bad5"),
+                            RefId = new Guid("0abdfbda-6f6a-4fd3-aa87-f441d11c2a62"),
                             StockLevel = 15,
                             UnitPrice = 300m
                         });
-                });
-
-            modelBuilder.Entity("Walkabouts.Data.Domain.ProductReview", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("Comment")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("CreatedBy")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long?>("ModifiedBy")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime?>("ModifiedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("NumOfStars")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<long?>("ProductId1")
-                        .HasColumnType("bigint");
-
-                    b.Property<Guid>("RefId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("ReviewBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId1");
-
-                    b.ToTable("ProductReviews");
                 });
 
             modelBuilder.Entity("Walkabouts.Data.Domain.ShoppingCart", b =>
@@ -718,15 +676,6 @@ namespace Walkabouts.Repository.Migrations
                         .HasForeignKey("UserWalletId");
                 });
 
-            modelBuilder.Entity("Walkabouts.Data.Domain.ProductReview", b =>
-                {
-                    b.HasOne("Walkabouts.Data.Domain.Product", "Product")
-                        .WithMany("Reviews")
-                        .HasForeignKey("ProductId1");
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("Walkabouts.Data.Domain.ShoppingCart", b =>
                 {
                     b.HasOne("Walkabouts.Data.Domain.UserProfile", "UserProfile")
@@ -775,11 +724,6 @@ namespace Walkabouts.Repository.Migrations
             modelBuilder.Entity("Walkabouts.Data.Domain.AppUser", b =>
                 {
                     b.Navigation("UserProfile");
-                });
-
-            modelBuilder.Entity("Walkabouts.Data.Domain.Product", b =>
-                {
-                    b.Navigation("Reviews");
                 });
 
             modelBuilder.Entity("Walkabouts.Data.Domain.ShoppingCart", b =>

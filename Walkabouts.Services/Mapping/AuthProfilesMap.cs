@@ -5,7 +5,7 @@ using System.Text;
 using Walkabouts.Data.Domain;
 using Walkabouts.Data.DTO;
 
-namespace Walkabouts.Data.Mapping
+namespace Walkabouts.Services.Mapping
 {
     public class AuthProfilesMap : Profile
     {

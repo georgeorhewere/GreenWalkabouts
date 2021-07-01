@@ -15,6 +15,7 @@ namespace Walkabouts.Repository.Context
         public virtual DbSet<UserProfile> UserProfiles { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ProductReview> ProductReviews { get; set; }
         public virtual DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public virtual DbSet<UserWallet> UserWallets { get; set; }
         public virtual DbSet<OrderItem> OrderItems { get; set; }
@@ -31,7 +32,9 @@ namespace Walkabouts.Repository.Context
             modelBuilder
                 .ApplyConfiguration(new UserWalletConfig());
             modelBuilder
-                .ApplyConfiguration(new ShoppingCartConfig());           
+                .ApplyConfiguration(new ShoppingCartConfig());
+            modelBuilder
+             .ApplyConfiguration(new ProductConfig());
 
         }
 

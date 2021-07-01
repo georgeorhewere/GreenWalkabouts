@@ -22,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Walkabouts.Repository\Walkabouts.Repository.csproj" />
     <ProjectReference Include="..\Walkabouts.Services\Walkabouts.Services.csproj" />
   </ItemGroup>
 
