@@ -21,20 +21,21 @@ namespace Walkabouts.Repository
             throw new NotImplementedException();
         }  
 
-        public IEnumerable<Product> Get(Expression<Func<Product, bool>> predicate)
+        public IEnumerable<Product> Get(Expression<Func<Product, bool>> predicate, int page = 1, int pageSize = 10)
         {
-            return context.Products.AsQueryable();
+            int skip = (page - 1) * pageSize;
+            return context.Products.Where(predicate).Skip(skip).Take(pageSize);
         }
 
-        public IQueryable<Product> GetAll(int page = 1, int pageSize = 20)
+        public IQueryable<Product> GetAll(int page = 1, int pageSize = 10)
         {
             int skip = (page - 1) * pageSize;
             return context.Products.Skip(skip).Take(pageSize);
         }
 
-        public Product GetById(int entityId)
+        public Product GetById(long entityId)
         {
-            throw new NotImplementedException();
+            return context.Products.Find(entityId);
         }
 
         public int Update(Product entity)

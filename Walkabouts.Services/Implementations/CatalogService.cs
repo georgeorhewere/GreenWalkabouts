@@ -12,12 +12,14 @@ using Walkabouts.Services.Interfaces;
 
 namespace Walkabouts.Services.Implementations
 {
-    public class CatalogService : BaseService,ICatalogService
+    public class CatalogService : ICatalogService
     {
         protected readonly IWalkaboutRepository<Product> productRepository;
-        public CatalogService(IWalkaboutRepository<Product> _productRepository, IMapper _mapper):base(_mapper)
+        protected readonly IMapper mapper;
+        public CatalogService(IWalkaboutRepository<Product> _productRepository, IMapper _mapper)
         {
-            productRepository = _productRepository;            
+            productRepository = _productRepository;
+            mapper = _mapper;
         }
 
       
@@ -35,10 +37,7 @@ namespace Walkabouts.Services.Implementations
 
         public CatalogItemDTO GetCatalogItem(long Id)
         {
-            throw new NotImplementedException();
-            //return context.Products.Where(x => x.Id == Id)
-            //                       .Select(x => mapper.Map<CatalogItemDTO>(x))
-            //                       .FirstOrDefault();
+            return mapper.Map<CatalogItemDTO>(productRepository.GetById(Id));
         }
     }
 }

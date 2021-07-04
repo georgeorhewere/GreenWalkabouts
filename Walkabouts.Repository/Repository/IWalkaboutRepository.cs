@@ -8,9 +8,9 @@ namespace Walkabouts.Repository
 {
     public interface IWalkaboutRepository<T>
     {
-        IEnumerable<T> Get(Expression<Func<T, bool>> predicate);
-        IQueryable<T> GetAll(int page = 1,int pageSize = 20);
-        T GetById(int entityId);
+        IEnumerable<T> Get(Expression<Func<T, bool>> predicate, int page = 1, int pageSize = 10);
+        IQueryable<T> GetAll(int page = 1,int pageSize = 10);
+        T GetById(long entityId);
         int Add(T entity);
         int Update(T entity);
 

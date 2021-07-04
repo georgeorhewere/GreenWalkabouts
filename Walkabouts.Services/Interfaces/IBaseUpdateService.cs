@@ -7,7 +7,8 @@ namespace Walkabouts.Services.Interfaces
     public interface IBaseUpdateService
     {
         // command
-        void Save<T>(T model) where T : class;
+        void Add<T>(T model) where T : class;
+        void Update<T>(T model) where T : class;
         void Delete<T>(T model) where T : class;
     }
 }
