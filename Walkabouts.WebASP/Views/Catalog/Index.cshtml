@@ -1,59 +1,35 @@
 ﻿@model IEnumerable<Walkabouts.Services.DTO.CatalogItemDTO>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Catalog";
 }
 
-<h1>Index</h1>
+<h1>Catalog</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UnitPrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StockLevel)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Featured)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UnitPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StockLevel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Featured)
-            </td>
-            <td>
+
+<div class="col-md-12 container-fluid">
+    @foreach (var item in Model)
+    {
+        <div class="card card-outline-primary m-1 p-1">
+            <div class="bg-faded p-1">
+                <h4>
+                    @item.ProductName
+                    <span class="badge badge-pill badge-primary" style="float:right">
+                        <small>@item.UnitPrice.ToString("c")</small>
+                    </span>
+                </h4>
+            </div>
+            <div class="card-text p-1">@item.Description</div>
+            <div class="card-footer">
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @* @Html.ActionLink("Delete", "Delete", new { id = item.PrimaryKey }) *@ 
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+            </div>
+
+
+        </div>
+    }
+</div> 
