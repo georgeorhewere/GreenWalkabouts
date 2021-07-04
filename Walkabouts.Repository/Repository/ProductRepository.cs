@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using Walkabouts.Data.Domain;
@@ -23,6 +24,12 @@ namespace Walkabouts.Repository
         public IEnumerable<Product> Get(Expression<Func<Product, bool>> predicate)
         {
             return context.Products.AsQueryable();
+        }
+
+        public IQueryable<Product> GetAll(int page = 1, int pageSize = 20)
+        {
+            int skip = (page - 1) * pageSize;
+            return context.Products.Skip(skip).Take(pageSize);
         }
 
         public Product GetById(int entityId)

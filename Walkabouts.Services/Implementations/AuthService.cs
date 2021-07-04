@@ -17,7 +17,7 @@ namespace Walkabouts.Services.Implementations
 
         public AuthService(WalkaboutsDbContext dbContext, 
                            UserManager<AppUser> _userManager, 
-                           IMapper mapper) :base(dbContext, mapper)
+                           IMapper mapper) :base(mapper)
         {
             userManager = _userManager;
         }
