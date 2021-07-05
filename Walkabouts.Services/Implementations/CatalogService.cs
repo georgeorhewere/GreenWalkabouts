@@ -31,8 +31,7 @@ namespace Walkabouts.Services.Implementations
 
         public IEnumerable<CatalogItemDTO> GetCatalog()
         {
-            return productRepository.GetAll().Select(x => mapper.Map<CatalogItemDTO>(x));
-            //return context.Products.Select(x => mapper.Map<CatalogItemDTO>(x));
+            return productRepository.GetAll().Select(x => mapper.Map<CatalogItemDTO>(x));           
         }
 
         public CatalogItemDTO GetCatalogItem(long Id)
