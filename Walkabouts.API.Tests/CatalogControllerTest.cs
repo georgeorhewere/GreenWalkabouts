@@ -18,6 +18,11 @@ namespace Walkabouts.API.Tests
 {
     public class CatalogControllerTest
     {
+        public CatalogControllerTest()
+        {
+
+        }
+
         [Fact]
         public void Can_Use_Repository()
         {

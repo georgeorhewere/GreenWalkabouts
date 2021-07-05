@@ -10,26 +10,25 @@
     <a asp-action="Create">Create New</a>
 </p>
 
-<div class="col-md-12 container-fluid">
-    @foreach (var item in Model)
-    {
-        <div class="card card-outline-primary m-1 p-1">
-            <div class="bg-faded p-1">
-                <h4>
-                    @item.ProductName
-                    <span class="badge badge-pill badge-primary" style="float:right">
-                        <small>@item.UnitPrice.ToString("c")</small>
-                    </span>
-                </h4>
-            </div>
-            <div class="card-text p-1">@item.Description</div>
-            <div class="card-footer">
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+<div class="col-md-12 products">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <partial name="CatalogGridItem" model="item" />
+        }
+    </div>
+</div>
 
-            </div>
-
-
-        </div>
+<style>
+    .products {
+        display: flex;
+        flex-wrap: wrap;
     }
-</div> 
+
+    .product-card {
+        padding: 2%;
+        flex-grow: 1;
+        flex-basis: 16%;
+        display: flex;
+    }
+</style>
