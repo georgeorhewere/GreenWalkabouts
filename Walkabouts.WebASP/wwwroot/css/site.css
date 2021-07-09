@@ -86,12 +86,13 @@ body {
 .catalog-item-info {
     display: block; /* Fallback for non-webkit */
     display: -webkit-box;
-    height: 3.6em; /* Fallback for non-webkit, line-height * 2 */
+    height: 4em; /* Fallback for non-webkit, line-height * 2 */
     line-height: 1.3em;
-    -webkit-line-clamp: 6; /* if you change this, make sure to change the fallback line-height and height */
+    -webkit-line-clamp: 3; /* if you change this, make sure to change the fallback line-height and height */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-bottom:0;
 }
 .catalog-grid-title {
     display: block; /* Fallback for non-webkit */
@@ -105,6 +106,21 @@ body {
 }
 .product-list-item {
     width: 100%
+}
+.catalog-item-image {
+    height: 130px;
+    width:auto;
+    display: flex;
+    justify-content: center;
+}
+
+.card-detail-badge {
+    background: #f2d900;
+    text-align: center;
+    border-radius: 30px 30px 30px 30px;
+    color: #000;
+    padding: 5px 10px;
+    font-size: 14px;
 }
 
 /*-------------------------------------------------- */

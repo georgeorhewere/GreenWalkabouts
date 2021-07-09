@@ -10,12 +10,13 @@
             </div>
             <span class="card-detail-badge">@Model.UnitPrice.ToString("c")</span>
         </div>
-        <div class="product-image">
-            @*<img src="assets/img/coat-01.jpeg">*@
+        <div class="catalog-item-image">
+            <img src="~/img/product-placeholder.png" height="150" width="150">
 
         </div>
-        <div class="card-body catalog-item-info bg-light text-center">
-            <p>@Model.Description</p>            
+        <div class="card-body bg-light text-center">
+            <p class=" catalog-item-info">@Model.Description</p>            
+            <span>@Html.ActionLink("more", "Details", new { id = Model.Id })</span>
         </div>
     </div>
     
