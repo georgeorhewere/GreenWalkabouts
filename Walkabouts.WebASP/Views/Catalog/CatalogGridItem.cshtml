@@ -1,20 +1,20 @@
 ﻿@model Walkabouts.Services.DTO.CatalogItemDTO
 
 <div class="col-md-4 mt-2">
-    <div class="card">
+    <div class="card catalog-grid-card">
         <div class="bg-light p-1">
-            <div class="card-title p-1 m-1">
+            <div class="card-title catalog-grid-title p-1 m-1">
                 <h4>
-                    @Model.ProductName
-                    <span class="badge badge-pill">@Model.UnitPrice.ToString("c")</span>
+                    @Model.ProductName                    
                 </h4>                    
-            </div>            
+            </div>
+            <span class="card-detail-badge">@Model.UnitPrice.ToString("c")</span>
         </div>
         <div class="product-image">
             @*<img src="assets/img/coat-01.jpeg">*@
 
         </div>
-        <div class="card-body product-info bg-light text-center">
+        <div class="card-body catalog-item-info bg-light text-center">
             <p>@Model.Description</p>            
         </div>
     </div>

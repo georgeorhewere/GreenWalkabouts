@@ -69,3 +69,42 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/* Catalog grid styles
+-------------------------------------------------- */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.catalog-grid-card {
+    height: 350px;
+    max-height: 350px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.catalog-item-info {
+    display: block; /* Fallback for non-webkit */
+    display: -webkit-box;
+    height: 3.6em; /* Fallback for non-webkit, line-height * 2 */
+    line-height: 1.3em;
+    -webkit-line-clamp: 6; /* if you change this, make sure to change the fallback line-height and height */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.catalog-grid-title {
+    display: block; /* Fallback for non-webkit */
+    display: -webkit-box;
+    height: 4.0em; /* Fallback for non-webkit, line-height * 2 */
+    line-height: 1.3em;
+    -webkit-line-clamp: 2; /* if you change this, make sure to change the fallback line-height and height */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.product-list-item {
+    width: 100%
+}
+
+/*-------------------------------------------------- */
